@@ -7,16 +7,20 @@ public class WeatherResponse {
     private Double longitude;
     private String timezone;
     
+    @JsonProperty("current")
+    private CurrentWeather current;
+    
     @JsonProperty("daily")
     private WeatherData daily;
     
     // Costruttori
     public WeatherResponse() {}
     
-    public WeatherResponse(Double latitude, Double longitude, String timezone, WeatherData daily) {
+    public WeatherResponse(Double latitude, Double longitude, String timezone, CurrentWeather current, WeatherData daily) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.timezone = timezone;
+        this.current = current;
         this.daily = daily;
     }
     
@@ -51,5 +55,13 @@ public class WeatherResponse {
     
     public void setDaily(WeatherData daily) {
         this.daily = daily;
+    }
+    
+    public CurrentWeather getCurrent() {
+        return current;
+    }
+    
+    public void setCurrent(CurrentWeather current) {
+        this.current = current;
     }
 }

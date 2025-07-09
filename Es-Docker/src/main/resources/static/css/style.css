@@ -49,6 +49,25 @@ body {
     transform: translateY(0);
 }
 
+/* Stili per la temperatura attuale */
+.card.bg-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%) !important;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.card.bg-info .display-3 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
 .btn-primary:hover {
     background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
     transform: translateY(-2px);

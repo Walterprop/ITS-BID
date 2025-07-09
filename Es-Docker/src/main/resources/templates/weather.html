@@ -19,6 +19,19 @@
                         </h1>
                     </div>
                     <div class="card-body">
+                        <!-- Temperatura Attuale -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="card bg-info text-white text-center">
+                                    <div class="card-body">
+                                        <h2 class="card-title">🌡️ Temperatura Attuale</h2>
+                                        <h1 class="display-3 fw-bold" th:text="${weatherData.current.temperature_2m} + '°C'">--°C</h1>
+                                        <p class="card-text" th:text="'Ultimo aggiornamento: ' + ${weatherData.current.time}">--</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="row mb-4">
                             <div class="col-md-4">
                                 <div class="info-box">

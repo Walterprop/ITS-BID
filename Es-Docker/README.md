@@ -35,6 +35,7 @@ L'applicazione sarà disponibile su: `http://localhost:8080`
 ```bash
 # Compila l'applicazione
 mvnw clean package
+.\mvnw clean package
 
 # Costruisce l'immagine Docker
 docker build -t weather-app .

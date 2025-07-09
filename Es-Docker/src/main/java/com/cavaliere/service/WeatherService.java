@@ -1,12 +1,14 @@
 package com.cavaliere.service;
 
-import com.cavaliere.model.WeatherResponse;
-import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.cavaliere.model.WeatherResponse;
+
+import reactor.core.publisher.Mono;
 
 @Service
 public class WeatherService {
@@ -28,6 +30,7 @@ public class WeatherService {
                         .path("/forecast")
                         .queryParam("latitude", latitude)
                         .queryParam("longitude", longitude)
+                        .queryParam("current", "temperature_2m")
                         .queryParam("daily", "temperature_2m_max,temperature_2m_min,temperature_2m_mean")
                         .queryParam("start_date", startDate.format(formatter))
                         .queryParam("end_date", endDate.format(formatter))
