@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quiz Capitale</title>
+</head>
+<body>
+    <div th:if="${tempo > 0}">
+        <p>Tempo rimasto: <span id="timer-value"></span></p>
+        <input type="hidden" id="tempo-quiz" th:value="${tempo}" />
+    </div>
+    <h1 th:text="${domanda.testo}">Domanda</h1>
+    <p>Domanda <span th:text="${domandaCorrente}"></span> di <span th:text="${numDomande}"></span></p>
+    <img th:src="@{${domanda.flag}}" alt="Bandiera" width="64" height="40" style="margin-bottom:10px;"/>
+    <form th:action="@{/quiz/risposta}" method="post">
+        <ul>
+            <li th:each="opzione : ${opzioni}">
+                <input type="radio" name="risposta" th:value="${opzione}" required>
+                <span th:text="${opzione}">Opzione</span>
+            </li>
+        </ul>
+        <input type="hidden" name="corretta" th:value="${domanda.rispostaCorretta}" />
+        <input type="hidden" name="numDomande" th:value="${numDomande}" />
+        <input type="hidden" name="domandaCorrente" th:value="${domandaCorrente}" />
+        <input type="hidden" name="difficolta" th:value="${difficolta}" />
+        
+        <button type="submit">Invia risposta</button>
+    </form>
+    <a th:href="@{/}">Torna alla Home</a>
+    <script src="/js/timer.js"></script>
+</body>
+</html>

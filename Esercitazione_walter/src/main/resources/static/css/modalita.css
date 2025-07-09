@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 32px 24px 24px 24px;
+    text-align: center;
+}
+h1 {
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+.result {
+    font-size: 1.3em;
+    margin: 24px 0 16px 0;
+}
+.timeout {
+    color: #d9534f;
+    font-weight: bold;
+}
+.score {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+}
+a {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 10px 24px;
+    background: #000000;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+a:hover {
+    background: #000000;
+}
+
+.quiz-bg-img {
+    position: fixed;
+    left: 35%;
+    top: 200px; /* regola la distanza dall'alto */
+    transform: translateX(-50%) rotate(-12deg); /* centra e inclina */
+    z-index: 0; /* dietro la scheda */
+    pointer-events: none;
+}
+.quiz-bg-img.left {
+    position: fixed;
+    left: 35%;
+    top: 200px;
+    transform: translateX(-50%) rotate(-12deg);
+    z-index: 0;
+    pointer-events: none;
+}
+.quiz-bg-img.right {
+    position: fixed;
+    left: 65%;
+    top: 200px;
+    transform: translateX(-50%) rotate(12deg);
+    z-index: 0;
+    pointer-events: none;
+}
+.quiz-bg-img.right img {
+    transform: scaleX(-1); /* specchia l'immagine */
+}
+
+.quiz-bg-img img {
+    width: 700px; /* regola la dimensione */
+    opacity: 0.85;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.15));
+}
+.container {
+    position: relative;
+    z-index: 1; /* sopra l'immagine */
+}
+.flames-bg {
+    position: fixed;
+    left: 50%;
+    bottom: 0px; /* regola la distanza dal fondo */
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.flames-bg img {
+    width: 2100px;      /* larghezza simile o poco più della card */
+    height: 300px;      /* altezza sottile per effetto striscia */
+    object-fit: cover; /* taglia l'immagine se serve */
+    opacity: 0.85;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.15));
+    user-select: none;
+    pointer-events: none;
+}

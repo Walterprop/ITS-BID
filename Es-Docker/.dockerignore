@@ -1,0 +1,15 @@
+target/
+!target/quiz-0.0.1-SNAPSHOT.jar
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+*.md
+.mvn/
+mvnw
+mvnw.cmd
+.vscode/
+.settings/
+.project
+.classpath

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 th:text="${titolo}">Libri</h1>
+        
+        <form action="libri" method="post">
+            <div>
+                <label for="titolo">Titolo:</label>
+                <input type="text" id="titolo" name="titolo" required>
+            </div>
+            <div>
+                <label for="pagine">Pagine:</label>
+                <input type="number" id="pagine" name="pagine" required>
+            </div>
+            <div>
+                <label for="prezzo">Prezzo:</label>
+                <input type="number" id="prezzo" name="prezzo" required>
+            </div>
+            
+        </form>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Titolo</th>
+                    <th>Prezzo</th>
+                    <th>Pagine</th>
+                   
+                </tr>
+
+        </thead>
+        <tbody>
+            <tr th:each="libro : ${libri}">
+                <td th:text="${libro.titolo}"></td>
+                <td th:text="${libro.prezzo}"></td>
+                <td th:text="${libro.pagine}"></td>
+            </tr>
+    </table>
+       <!-- ...existing code... -->
+            <ul>
+                <li th:each="genere : ${generi}" th:text="${genere}"></li>
+
+            </ul>
+
+            <ul>
+                <li th:each="libro : ${libri}" th:text="${libro.titolo}"></li>
+            </ul>
+<!-- ...existing code... -->
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quiz Finito</title>
+    <link rel="stylesheet" href="/css/quiz_finito.css"/>
+</head>
+<body>
+    <div class="quiz-bg-img left">
+        <img src="/img/amogus.gif" alt="Decorazione sinistra" />
+    </div>
+    <div class="quiz-bg-img right">
+        <img src="/img/amogus.gif" alt="Decorazione destra" />
+    </div>
+    <div class="flames-bg">
+        <img src="/img/fire.gif" alt="Fiamme decorative" />
+    </div>
+    <div class="container">
+        <img src="/img/draco-malfoy.gif" alt="GIF" style="width:100%;"/>
+        <h1>Quiz completato!</h1>
+        <p th:if="${timeout}">Tempo scaduto! Il quiz è stato terminato automaticamente.<br>
+            Hai risposto correttamente a <b th:text="${punteggio}">0</b> su <b th:text="${numDomande}">0</b> domande.</p>
+        <p th:unless="${timeout}">Hai risposto correttamente a <b th:text="${punteggio}">0</b> su <b th:text="${numDomande}">0</b> domande.</p>
+        <a th:href="@{/}">Torna alla Home</a>
+    </div>
+</body>
+</html>

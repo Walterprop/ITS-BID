@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista Paesi</title>
+</head>
+<body>
+    <h1>Lista dei Paesi</h1>
+    <ul>
+        <li th:each="paese : ${paesi}">
+            <span th:text="${paese.name}">Nome Paese</span> - 
+            <span th:text="${paese.capital}">Capitale</span>
+        </li>
+    </ul>
+</body>
+</html>

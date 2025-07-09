@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Allenamento Capitali</title>
+</head>
+<body>
+    <h1>Allenamento sulle Capitali</h1>
+    <p>Qui puoi vedere la lista dei paesi e ripassare le capitali!</p>
+    <ul>
+        <li th:each="paese : ${paesi}">
+            <img th:src="@{${paese.flag}}" alt="Bandiera" width="32" height="20" style="vertical-align:middle;"/>
+            <b th:text="${paese.name}">Nome Paese</b> - 
+            <span th:text="${paese.capital}">Capitale</span>
+        </li>
+    </ul>
+    <a th:href="@{/}">Torna alla Home</a>
+</body>
+</html>

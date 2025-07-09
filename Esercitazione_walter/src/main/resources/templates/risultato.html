@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Risultato Quiz</title>
+</head>
+<body>
+    <h1 th:if="${esatta}">Risposta corretta!</h1>
+    <h1 th:unless="${esatta}">Risposta sbagliata!</h1>
+    <p>La risposta giusta era: <span th:text="${corretta}"></span></p>
+    <a th:href="@{/quiz}">Nuova domanda</a>
+</body>
+</html>

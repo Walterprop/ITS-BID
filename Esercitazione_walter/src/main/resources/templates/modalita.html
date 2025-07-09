@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Quiz Capitali</title>
+    <link rel="stylesheet" href="/css/modalita.css"/>
+</head>
+<body>
+    <h1>Benvenuto al Quiz sulle Capitali!</h1>
+    <form>
+        <button formaction="/allenamento" formmethod="get">Modalità Allenamento</button>
+        
+    </form>
+
+    <form th:action="@{/quiz/start}" method="get">
+        <label for="difficolta">Scegli la difficoltà:</label>
+        <select name="difficolta" id="difficolta">
+            <option value="facile">Facile (10 domande)</option>
+            <option value="medio">Medio (20 domande)</option>
+            <option value="difficile">Difficile (30 domande)</option>
+        </select>
+        <button type="submit">Inizia Quiz</button>
+    </form>
+</body>
+</html>

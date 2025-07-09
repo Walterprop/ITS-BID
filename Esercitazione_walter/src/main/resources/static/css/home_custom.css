@@ -1,0 +1,99 @@
+body {
+    background: #000000 !important;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;      
+    width: 100vw;       
+    background: none !important;
+    box-shadow: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.gioca-btn {
+    position: relative;  
+    z-index: 2;
+    font-size: 2em;
+    padding: 20px 60px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+}
+.flames {
+    position: absolute;
+    left: 50%;
+    top: -100px;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 120px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    background: url('/img/fire.gif') no-repeat center;
+    background-size: 100% 100%;
+    z-index: 1;
+    display: block;
+}
+.gioca-btn:hover + .flames {
+    opacity: 1;
+}
+.gioca-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 32px rgba(5, 78, 236, 0.15);
+    background: #ffffff;
+}
+
+.transition-hidden {
+    display: none !important;
+}
+#transition {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.95); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.5s;
+}
+.transition-img {
+    width: 320px;
+    border-radius: 16px;
+    animation: none;
+    transition: transform 2s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 2s;
+}
+
+.transition-zoom {
+    transform: scale(10);  
+    opacity: 0.4;           
+    transition: transform 2.5s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 2.5s;
+}
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
